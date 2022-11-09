@@ -31,11 +31,10 @@ var createTaskEl = function (taskDataObj) {
   // append data to div we just created
   taskInfoEl.innerHTML =
     "<h3 class='task-name'>" +
-    taskNameInput +
+    taskDataObj.name +
     "</h3><span class='task-type'>" +
-    taskTypeInput +
+    taskDataObj.type +
     "</span>";
-
   listItemEl.appendChild(taskInfoEl);
 
   // append the entire <li> to the parent <ul> tasksToDoEl
