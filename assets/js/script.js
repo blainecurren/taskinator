@@ -8,17 +8,17 @@ var createTaskHandler = function (event) {
   var taskNameInput = document.querySelector("input[name='task-name']").value;
   // get the value of the dropdowns selected element
   var taskTypeInput = document.querySelector("select[name='task-type']").value;
-  console.log(taskTypeInput);
 
-  // create list item
+  // create li element to hold the whole task listItemEl
   var listItemEl = document.createElement("li");
   listItemEl.className = "task-item";
 
-  // create div to hold task info and add to list item
+  // create div to hold task-info and add to list item
   var taskInfoEl = document.createElement("div");
   // Give it a class name
   taskInfoEl.className = "task-info";
-  // add HTML content to div
+
+  // append data to div we just created
   taskInfoEl.innerHTML =
     "<h3 class='task-name'>" +
     taskNameInput +
@@ -28,7 +28,7 @@ var createTaskHandler = function (event) {
 
   listItemEl.appendChild(taskInfoEl);
 
-  // add entire list item to list
+  // append the entire <li> to the parent <ul> tasksToDoEl
   tasksToDoEl.appendChild(listItemEl);
 };
 
