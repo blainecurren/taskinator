@@ -1,7 +1,7 @@
 var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");
 
-var createTaskHandler = function (event) {
+var taskFormHandler = function (event) {
   event.preventDefault();
 
   // .value is the objects property
@@ -32,4 +32,4 @@ var createTaskHandler = function (event) {
   tasksToDoEl.appendChild(listItemEl);
 };
 
-formEl.addEventListener("submit", createTaskHandler);
+formEl.addEventListener("submit", taskFormHandler);
