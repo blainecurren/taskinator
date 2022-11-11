@@ -32,11 +32,13 @@ var createTaskEl = function (taskDataObj) {
   var listItemEl = document.createElement("li");
   listItemEl.className = "task-item";
 
+  // add task id as custom attribute
+  listItemEl.setAttribute("data-task-id", taskIdCounter);
+
   // create div to hold task-info and add to list item
   var taskInfoEl = document.createElement("div");
   // Give it a class name
   taskInfoEl.className = "task-info";
-
   // append data to div we just created
   taskInfoEl.innerHTML =
     "<h3 class='task-name'>" +
@@ -48,6 +50,9 @@ var createTaskEl = function (taskDataObj) {
 
   // append the entire <li> to the parent <ul> tasksToDoEl
   tasksToDoEl.appendChild(listItemEl);
+
+  // increase task counter for next unique ID
+  taskIdCounter++;
 };
 
 formEl.addEventListener("submit", taskFormHandler);
