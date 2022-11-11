@@ -55,4 +55,26 @@ var createTaskEl = function (taskDataObj) {
   taskIdCounter++;
 };
 
+var createTaskActions = function (taskId) {
+  // Dynamically create a div w/ a className
+  var actionContainerEl = document.createElement("div");
+  actionContainerEl.className = "task-actions";
+
+  // create edit button
+  var editButtonEl = document.createElement("button");
+  editButtonEl.textContent = "Edit";
+  editButtonEl.className = "btn edit-btn";
+  editButtonEl.setAttribute("data-task-id", taskId);
+
+  actionContainerEl.appendChild(editButtonEl);
+
+  // create delete button
+  var deleteButtonEl = document.createElement("button");
+  deleteButtonEl = document.createElement("button");
+  deleteButtonEl.textContent = "Delete";
+  deleteButtonEl.setAttribute("data-task-id", taskId);
+
+  actionContainerEl.appendChild(deleteButtonEl);
+};
+
 formEl.addEventListener("submit", taskFormHandler);
