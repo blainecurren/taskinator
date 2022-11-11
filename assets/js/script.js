@@ -71,10 +71,14 @@ var createTaskActions = function (taskId) {
   // create delete button
   var deleteButtonEl = document.createElement("button");
   deleteButtonEl = document.createElement("button");
+  deleteButtonEl.className = "btn delete-btn";
   deleteButtonEl.textContent = "Delete";
+
   deleteButtonEl.setAttribute("data-task-id", taskId);
 
   actionContainerEl.appendChild(deleteButtonEl);
+
+  return actionContainerEl;
 };
 
 formEl.addEventListener("submit", taskFormHandler);
