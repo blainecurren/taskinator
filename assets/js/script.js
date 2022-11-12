@@ -109,9 +109,14 @@ var createTaskActions = function (taskId) {
 formEl.addEventListener("submit", taskFormHandler);
 
 var taskButtonHandler = function (event) {
-  console.log(event.target);
+  //get target element from event
+  var targetEl = event.target;
 
-  if (event.target.matches(".delete-btn")) {
+  // edit button was clicked
+  if (targetEl.matches(".edit-btn")) {
+    var taskId = targetEl.getAttribute("data-task-id");
+    editTask(taskId);
+  } else if (event.target.matches(".delete-btn")) {
     // get the element's task id
     var taskId = event.target.getAttribute("data-task-id");
     deleteTask(taskId);
