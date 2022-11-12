@@ -119,7 +119,10 @@ var taskButtonHandler = function (event) {
 };
 
 var deleteTask = function (taskId) {
-  console.log(taskId);
+  var taskSelected = document.querySelector(
+    ".task-item[data-task-id='" + taskId + "']"
+  );
+  taskSelected.remove();
 };
 
 pageContentEl.addEventListener("click", taskButtonHandler);
