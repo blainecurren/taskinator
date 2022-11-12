@@ -48,6 +48,11 @@ var createTaskEl = function (taskDataObj) {
     "</span>";
   listItemEl.appendChild(taskInfoEl);
 
+  var taskActionsEl = createTaskActions(taskIdCounter);
+  listItemEl.appendChild(taskActionsEl);
+
+  tasksToDoEl.appendChild(listItemEl);
+
   // append the entire <li> to the parent <ul> tasksToDoEl
   tasksToDoEl.appendChild(listItemEl);
 
@@ -92,7 +97,7 @@ var createTaskActions = function (taskId) {
     statusOptionEl.setAttribute("value", statusChoices[i]);
 
     //append to select
-    statusSelectEl.appendChild(statusOptionEl);No
+    statusSelectEl.appendChild(statusOptionEl);
   }
 
   actionContainerEl.appendChild(statusSelectEl);
